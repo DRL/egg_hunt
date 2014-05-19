@@ -22,4 +22,4 @@ if __name__ == "__main__":
 	dist_trans = dist_trans.astype(np.uint8)
 	eggs = pymorph.cwatershed(dist_trans, seeds)
 	pylab.imshow(eggs)
-	pylab.show()
+	pylab.savefig(filename + ".out.png", format='png')
