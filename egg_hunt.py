@@ -11,9 +11,9 @@ import sys
 if __name__ == "__main__":
 	filename = sys.argv[1]
 	image = mahotas.imread(filename)
-	image = ndimage.gaussian_filter(image, 16)
+	image = ndimage.gaussian_filter(image, 16, order =)
 	rmax = pymorph.regmax(image)
-	seeds,nr_eggs = ndimage.label(rmax)
+	seeds, nr_eggs = ndimage.label(rmax)
 	print nr_eggs
 	threshold = mahotas.thresholding.otsu(image)
 	dist_trans = ndimage.distance_transform_edt(image > threshold)
